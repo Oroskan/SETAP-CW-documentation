@@ -5,7 +5,7 @@ The ``Quizzes`` feature in **Learning App** allows users to create, edit, and ma
 Users can enter a title, subject, and questions for each note. 
 The quizzes are stored locally on the user's device and can be accessed at any time.
 
-*Creating a New Quiz*
+Creating a New Quiz
 ----------------
 When the user clicks the floating ``+`` button, the application calls the ``_addNewQuiz`` method.
 This method navigates to the ``CreateQuizPage`` widget.
@@ -28,7 +28,7 @@ This method navigates to the ``CreateQuizPage`` widget.
 The ``CreateQuizPage`` widget provides a user interface for creating new titles of quizzes. 
 When a title is created, the user can add questions to the quiz.
 
-*Editing Quizzes and Adding Questions*
+Editing Quizzes and Adding Questions
 ----------------
 The user can access the edit page for a quiz by swiping the title in the quiz menu to the right.
 The ``_editQuiz`` method is called, which navigates to the ``QuizEditorPage`` widget.
@@ -200,7 +200,7 @@ The method checks if the quiz title is empty and displays a warning message.
     }
   }
 
-*Deleting a Quiz*
+Deleting a Quiz
 -------------
 When the user swipes left on a quiz in the list, the ``_deleteQuiz`` method is called.
 
@@ -239,7 +239,7 @@ It displays a confirmation dialog to confirm the deletion action.
             ) ?? false;
     }
 
-*Take a Quiz*
+Take a Quiz
 -------------
 The user can take a quiz by tapping the quiz title in the quiz menu if the quiz is not empty. 
 The ``_takeQuiz`` method is called, which navigates to the ``QuizScreen`` widget.
@@ -324,7 +324,7 @@ and the user will move to the next question or the summary page.
     });
   }
 
-*Quiz Summary*
+Quiz Summary
 ------------
 The summary page provides users with a summary of their quiz performance, 
 including the number of correct and incorrect answers, time taken, and options to review answers or start a new quiz.

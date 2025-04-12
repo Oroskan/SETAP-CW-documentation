@@ -5,7 +5,7 @@ The ``Notes`` feature in **Learning App** allows users to create, edit, and mana
 Users can enter a title, subject, and content for each note. 
 The notes are stored locally on the user's device and can be accessed at any time.
 
-*Creating a New Note*
+Creating a New Note
 -----------------
 When the user clicks the floating ``+`` button, the application calls the ``_addNewNote`` method.
 This method navigates to the ``CreateNotePage`` widget.
@@ -35,7 +35,7 @@ It consists of three input fields:
 The user can fill out these fields and save the note by tapping the save button. 
 The note will then be added to the list of notes in the app.
 
-*Saving a Note*
+Saving a Note
 -----------
 When the user taps the save button, the ``_saveNote`` method is called. 
 The method stores the title, subject and content into the database.
@@ -63,7 +63,7 @@ The method stores the title, subject and content into the database.
     Navigator.pop(context, note);
   }
 
-*Deleting a Note*
+Deleting a Note
 -------------
 When the user swipes left on a note in the list, the ``_deleteNote`` method is called.
 This method removes the note from the database and updates the list of notes displayed in the app.
@@ -102,7 +102,7 @@ The ``_confirmDelete`` method is called. A confirmation dialog appears to confir
         false;
   }
 
-*Searching for Notes*
+Searching for Notes
 ----------------
 The user can search for notes by entering keywords in the search box.
 The search function looks for matches in the title and subject fields.
