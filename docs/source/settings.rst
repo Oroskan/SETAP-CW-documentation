@@ -96,7 +96,7 @@ Profile Picture & Name
 Preferences Group
 **Push Notifications**
 ^^^^^^^^^^^^^^^^^^^^^^
-A simple switch.  Persist the value by writing to ``Settings`` or your own backend::
+A simple switch.  Persist the value by writing to ``Settings`` or your own backend:
 
 .. code-block:: dart
    PushNotificationsTile(
@@ -111,7 +111,7 @@ A simple switch.  Persist the value by writing to ``Settings`` or your own backe
 **Dark Mode**
 ^^^^^^^^^^^^^
 
-Toggles between light & dark themes in real time and stores the preference::
+Toggles between light & dark themes in real time and stores the preference:
 
 .. code-block:: dart
    DarkModeTile(
@@ -127,7 +127,7 @@ Toggles between light & dark themes in real time and stores the preference::
 Logout Button
 ~~~~~~~~~~~~~
 
-A centred **elevated** button anchored at the bottom of the list.  Replace the snackbar with your auth sign‑out logic::
+A centred **elevated** button anchored at the bottom of the list.  Replace the snackbar with your auth sign‑out logic:
 
    onPressed: () async {
      await AuthService.signOut();
