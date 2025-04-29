@@ -78,23 +78,91 @@ Profile Picture & Name
   - Different from current username
 
 .. code-block:: dart
-:caption: Open the username dialog
+  UsernameTile(
+    currentUsername: currentUsername,
+    onUsernameChanged: (name) {
+    setState(() => currentUsername = name);
+    },
+    theme: theme,
+  )
 
-UsernameTile(
-currentUsername: currentUsername,
-onUsernameChanged: (name) {
-setState(() => currentUsername = name);
-},
-theme: theme,
-)
-
-Password
-^^^^^^^^^^^^
-
-Label: Password  ↗  "Change password"
-
-Interaction: opens _ChangePasswordDialog
-
-Validation: ≥ 6 characters (extend as needed for strength checks)
+**Password**^^^^^^^^^^^^
+- Label: Password  ↗  "Change password"
+- Interaction: opens `_ChangePasswordDialog`
+- Validation: ≥ 6 characters (extend as needed for strength checks)
 
 Preferences Group
+**Push Notifications**
+^^^^^^^^^^^^^^^^^^^^^^
+A simple switch.  Persist the value by writing to ``Settings`` or your own backend::
+
+   PushNotificationsTile(
+     value: pushNotificationsEnabled,
+     onChanged: (val) {
+       setState(() => pushNotificationsEnabled = val);
+       // TODO: subscribe/unsubscribe device token.
+     },
+     theme: theme,
+   )
+
+**Dark Mode**
+^^^^^^^^^^^^^
+
+Toggles between light & dark themes in real time and stores the preference::
+
+   DarkModeTile(
+     value: darkModeEnabled,
+     onChanged: (val) {
+       setState(() => darkModeEnabled = val);
+       themeNotifier.value = val ? ThemeMode.dark : ThemeMode.light;
+       ThemeHelper.setDarkMode(val); // persists to SharedPreferences
+     },
+     theme: theme,
+   )
+
+Logout Button
+~~~~~~~~~~~~~
+
+A centred **elevated** button anchored at the bottom of the list.  Replace the snackbar with your auth sign‑out logic::
+
+   onPressed: () async {
+     await AuthService.signOut();
+     Navigator.pushReplacementNamed(context, '/login');
+   },
+
+Re‑usable Building Blocks
+-------------------------
+
+``_PurpleRowItem``
+
+- Reusable list‑tile‑like row with title, subtitle and chevron.
+- Uses the theme’s secondary color at 20 % opacity.
+- Rounded top corners only so adjacent items create a continuous card.
+`_PurpleSwitchRow`
+
+* Row with label + **Material ``Switch``**.
+* Shares the same container styling as ``_PurpleRowItem``.
+
+Extending the Module
+--------------------
+
+* **Link to system settings:** Use ``AppSettings.openAppSettings()`` for Android/iOS.
+* **Biometric lock:** Add a ``_PurpleSwitchRow`` that calls ``local_auth``.
+* **Account deletion:** Place a **destructive** button below “Log out”.
+
+Unit Testing
+------------
+
+1. Wrap widget under test with ``ValueListenableBuilder`` and inject a fake ``Settings`` cache provider.
+2. Verify that toggling **Dark Mode** updates both ``themeNotifier`` and persistent storage.
+
+.. code-block:: dart
+   :caption: Example widget test (shortened)
+
+   testWidgets('dark mode switch updates notifier', (tester) async {
+     await tester.pumpWidget(const SettingsMenu());
+     final switchFinder = find.byType(Switch);
+     await tester.tap(switchFinder);
+     await tester.pumpAndSettle();
+     expect(themeNotifier.value, ThemeMode.dark);
+   });
