@@ -20,7 +20,7 @@ flutter_settings_screens: ^0.3.0
 **Getting Started**
 ===============
 
-1. Initialize shared preferences before the first widget is built::
+**1. Initialize shared preferences** before the first widget is built::
 
 void main() async {
 WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,7 @@ await Settings.init(cacheProvider: SharePreferenceCache());
 runApp(const MyApp());
 }
 
-2. **Wrap ``MaterialApp``** in a ``ValueListenableBuilder`` so the UI rebuilds when the theme changes::
+**2. Wrap ``MaterialApp``** in a ``ValueListenableBuilder`` so the UI rebuilds when the theme changes::
 
 .. code-block:: dart
 
@@ -46,3 +46,19 @@ runApp(const MyApp());
       );
     }
   }
+
+**High‑level Structure**
+==================
+
+.. code-block:: dart
+:caption: Directory layout (excerpt)
+
+lib/
+├─ main.dart            # entry point & theme notifier
+├─ settings_menu.dart   # everything in this doc
+└─ theme.dart           # light & dark ThemeData
+
+`SettingsMenu` uses a stateful widget (`_ProfilePageState`) to keep local copies of:
+- `pushNotificationsEnabled` – `bool`
+- `darkModeEnabled` – `bool`
+- `currentUsername` – `String`
