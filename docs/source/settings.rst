@@ -28,7 +28,7 @@ await Settings.init(cacheProvider: SharePreferenceCache());
 runApp(const MyApp());
 }
 
-**2. Wrap ``MaterialApp``** in a ``ValueListenableBuilder`` so the UI rebuilds when the theme changes::
+**2. Wrap MaterialApp** in a ``ValueListenableBuilder`` so the UI rebuilds when the theme changes::
 
 .. code-block:: dart
 
