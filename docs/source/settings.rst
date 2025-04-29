@@ -129,6 +129,8 @@ Logout Button
 
 A centred **elevated** button anchored at the bottom of the list.  Replace the snackbar with your auth sign‑out logic:
 
+.. code-block:: dart
+
    onPressed: () async {
      await AuthService.signOut();
      Navigator.pushReplacementNamed(context, '/login');
