@@ -52,9 +52,9 @@ runApp(const MyApp());
 
 
 lib/
-├─ main.dart            # entry point & theme notifier
-├─ settings_menu.dart   # everything in this doc
-└─ theme.dart           # light & dark ThemeData
+|- main.dart            # entry point & theme notifier
+|- settings_menu.dart   # everything in this doc
+|_ theme.dart           # light & dark ThemeData
 
 `SettingsMenu` uses a stateful widget (`_ProfilePageState`) to keep local copies of:
 - `pushNotificationsEnabled` – `bool`
