@@ -50,8 +50,6 @@ runApp(const MyApp());
 **High‑level Structure**
 ==================
 
-.. code-block:: dart
-:caption: Directory layout (excerpt)
 
 lib/
 ├─ main.dart            # entry point & theme notifier
@@ -62,3 +60,41 @@ lib/
 - `pushNotificationsEnabled` – `bool`
 - `darkModeEnabled` – `bool`
 - `currentUsername` – `String`
+
+and listens to an external `darkModeNotifier` so changes elsewhere stay in sync.
+
+**User Interface Walk‑through**
+================
+
+Profile Picture & Name
+
+**Username**^^^^^^^^^^^^
+- Label: Username  ↗  "Change username"
+- Interaction: opens a modal `**ChangeUsernameDialog**`
+- Validation rules:
+  - Non‑empty
+  - ≤ 15 characters
+  - Alphanumeric only (`^[A‑Za‑z0‑9]+$`)
+  - Different from current username
+
+.. code-block:: dart
+:caption: Open the username dialog
+
+UsernameTile(
+currentUsername: currentUsername,
+onUsernameChanged: (name) {
+setState(() => currentUsername = name);
+},
+theme: theme,
+)
+
+Password
+^^^^^^^^^^^^
+
+Label: Password  ↗  "Change password"
+
+Interaction: opens _ChangePasswordDialog
+
+Validation: ≥ 6 characters (extend as needed for strength checks)
+
+Preferences Group
