@@ -30,7 +30,7 @@ runApp(const MyApp());
 
 **2. Wrap ``MaterialApp``** in a ``ValueListenableBuilder`` so the UI rebuilds when the theme changes::
 
-.. code-block:: dart
+..code-block:: dart
 
   class MyApp extends StatelessWidget {
     @override
@@ -96,7 +96,7 @@ Preferences Group
 ^^^^^^^^^^^^^^^^^^^^^^
 A simple switch.  Persist the value by writing to ``Settings`` or your own backend::
 
-.. code-block:: dart
+..code-block:: dart
    PushNotificationsTile(
      value: pushNotificationsEnabled,
      onChanged: (val) {
@@ -111,8 +111,7 @@ A simple switch.  Persist the value by writing to ``Settings`` or your own backe
 
 Toggles between light & dark themes in real time and stores the preference::
 
-.. code-block:: dart
-
+..code-block:: dart
    DarkModeTile(
      value: darkModeEnabled,
      onChanged: (val) {
