@@ -2,9 +2,8 @@ Welcome to Lumache's documentation!
 ===================================
 
 **This thing** is a flutter application for assisting in learning
-that stores notes, generates challenging questions, and tracks your progress.
-It doesn't pull data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-but it does offer a *simple* and *intuitive* API.
+that stores notes, allows you to make quizzes and tracks your progress.
+The goal is to help you create learning resources and study them in a well designed app that can be used across desktop and mobile devices..
 
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
@@ -18,7 +17,8 @@ Contents
 
 .. toctree::
 
-   usage
-   api
+   installation
    notes
    quizzes
+   settings
+
