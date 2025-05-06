@@ -27,11 +27,24 @@ Theme Configuration
 
 Returns a configured `ThemeData` object based on the `darkMode` flag. Customizes several UI aspects:
 
-- **Primary color**: Blue-toned colors vary by mode.
-- **Background and surface colors**: Tailored to enhance readability and aesthetics.
-- **Text color**: White for dark mode, black for light mode.
-- **Secondary and success colors**: Used for accents and status indicators.
-- **Component themes**: Customizes app bar, navigation bar, FAB, cards, buttons, and input fields.
+Customizations include:
+
+- **Primary color**:  
+  - Light mode: `#007AFF`  
+  - Dark mode: `#0A84FF`
+
+- **Background and surface colors**:
+  - Background: `#F2F2F7` (light), `#1C1C1E` (dark)
+  - Surface: `Colors.white` (light), `#2C2C2E` (dark)
+
+- **Text color**:
+  - `#000000` (light), `Colors.white` (dark)
+
+- **Secondary color**:
+  - `#5AC8FA` (light), `#64D2FF` (dark)
+
+- **Success color** (used in tertiary slot of `ColorScheme`):
+  - `#34C759` (light), `#30D158` (dark)
 
 Helper Class: ThemeHelper
 -------------------------
@@ -59,7 +72,7 @@ Toggles between light and dark mode by calling `setDarkMode` with the opposite v
 Usage
 -----
 
-To listen and react to theme changes globally, use `darkModeNotifier` in your widget tree:
+To listen and react to theme changes globally, use `darkModeNotifier` in our widget tree:
 
 .. code-block:: dart
 
