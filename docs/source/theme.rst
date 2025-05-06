@@ -1,0 +1,74 @@
+theme.dart
+==========
+
+This module defines the app's global theming logic, including light and dark themes, using Flutter's `ThemeData` and a `ValueNotifier` to manage runtime theme switching. It also includes a `ThemeHelper` class to simplify accessing and updating the current theme state.
+
+Global Constants
+----------------
+
+.. code-block:: dart
+
+   const String keyDarkMode = 'key-dark-mode';
+
+Key used to persist the user's dark mode preference using the `flutter_settings_screens` package.
+
+.. code-block:: dart
+
+   final ValueNotifier<bool> darkModeNotifier = ValueNotifier<bool>(false);
+
+A global notifier that tracks the dark mode state across the app, enabling reactive theme updates.
+
+Theme Configuration
+-------------------
+
+.. code-block:: dart
+
+   ThemeData getTheme(bool darkMode)
+
+Returns a configured `ThemeData` object based on the `darkMode` flag. Customizes several UI aspects:
+
+- **Primary color**: Blue-toned colors vary by mode.
+- **Background and surface colors**: Tailored to enhance readability and aesthetics.
+- **Text color**: White for dark mode, black for light mode.
+- **Secondary and success colors**: Used for accents and status indicators.
+- **Component themes**: Customizes app bar, navigation bar, FAB, cards, buttons, and input fields.
+
+Helper Class: ThemeHelper
+-------------------------
+
+A utility class to manage and persist the dark mode setting.
+
+.. code-block:: dart
+
+   static bool isDarkMode()
+
+Returns the current theme mode (`true` for dark, `false` for light).
+
+.. code-block:: dart
+
+   static void setDarkMode(bool value)
+
+Sets the dark mode state and persists it using `Settings.setValue`.
+
+.. code-block:: dart
+
+   static void toggleDarkMode()
+
+Toggles between light and dark mode by calling `setDarkMode` with the opposite value.
+
+Usage
+-----
+
+To listen and react to theme changes globally, use `darkModeNotifier` in your widget tree:
+
+.. code-block:: dart
+
+   ValueListenableBuilder<bool>(
+     valueListenable: darkModeNotifier,
+     builder: (context, isDark, _) {
+       return MaterialApp(
+         theme: getTheme(isDark),
+         home: HomePage(),
+       );
+     },
+   )
