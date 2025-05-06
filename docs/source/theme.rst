@@ -25,26 +25,7 @@ Theme Configuration
 
    ThemeData getTheme(bool darkMode)
 
-Returns a configured `ThemeData` object based on the `darkMode` flag. Customizes several UI aspects:
-
-Customizations include:
-
-- **Primary color**:  
-  - Light mode: `#007AFF`  
-  - Dark mode: `#0A84FF`
-
-- **Background and surface colors**:
-  - Background: `#F2F2F7` (light), `#1C1C1E` (dark)
-  - Surface: `Colors.white` (light), `#2C2C2E` (dark)
-
-- **Text color**:
-  - `#000000` (light), `Colors.white` (dark)
-
-- **Secondary color**:
-  - `#5AC8FA` (light), `#64D2FF` (dark)
-
-- **Success color** (used in tertiary slot of `ColorScheme`):
-  - `#34C759` (light), `#30D158` (dark)
+Returns a configured `ThemeData` object based on the `darkMode` flag. 
 
 Helper Class: ThemeHelper
 -------------------------
