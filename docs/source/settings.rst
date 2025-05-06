@@ -82,20 +82,6 @@ Dark mode changes are propagated in two ways:
 
    This ensures both persistent storage and runtime UI update.
 
-Usage
------
 
-To integrate the settings menu in your app, ensure `Settings.init()` is called at app start, and wrap `MaterialApp` with a `ValueListenableBuilder` to respond to theme changes.
 
-Extending the Menu
-------------------
-
-You can add more preferences or account settings by adding new `SettingsGroup` sections. Always use the `ThemeData` passed from `getTheme()` to ensure consistency.
-
-Developer Tips
---------------
-
-- Use `darkModeNotifier` for components outside the `SettingsMenu` to access theme state.
-- Validate all user inputs (username, password) before applying changes.
-- Use `StatefulWidgets` or `ValueNotifier` where reactivity is needed (e.g., toggles, dialogs).
 
