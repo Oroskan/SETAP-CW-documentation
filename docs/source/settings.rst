@@ -1,9 +1,9 @@
 settings_menu.dart
 ==================
 
-This module implements a dynamic and theme-aware **Settings Menu** page using `flutter_settings_screens`, `ValueNotifier`, and Flutter widgets. It supports dark mode toggling, user profile settings, and preferences such as push notifications.
+Here we implemented a dynamic and theme-aware **Settings Menu** page using `flutter_settings_screens`, `ValueNotifier`, and Flutter widgets. It supports the dark mode toggle, user profile settings, and preferences e.g. push notifications.
 
-Initialization
+Initialisation
 --------------
 
 .. code-block:: dart
