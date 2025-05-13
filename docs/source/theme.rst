@@ -1,7 +1,7 @@
 theme.dart
 ==========
 
-This module defines the app's global theming logic, including light and dark themes, using Flutter's `ThemeData` and a `ValueNotifier` to manage runtime theme switching. It also includes a `ThemeHelper` class to simplify accessing and updating the current theme state.
+Here we define the app's global theming logic, light/dark themes, using Flutter's `ThemeData` and a `ValueNotifier`which includes a `ThemeHelper` class to simplify accessing and updating the current theme state.
 
 Global Constants
 ----------------
