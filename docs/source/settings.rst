@@ -51,10 +51,6 @@ The `SettingsMenu` is a `StatefulWidget` that loads and syncs dark mode state wi
 4. **Logout Button**:
    - Displays a `SnackBar` as a placeholder for actual logout logic.
 
-Theme Integration
------------------
-
-The app uses the `getTheme()` function to generate a consistent `ThemeData` based on dark or light mode. Each widget (tiles, switches, dialogs) is passed the current theme explicitly to maintain styling consistency.
 
 Custom Widgets (other)
 ----------------------
