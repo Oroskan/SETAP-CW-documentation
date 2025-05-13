@@ -10,7 +10,7 @@ Initialisation
 
    await Settings.init(cacheProvider: SharePreferenceCache());
 
-Initializes the persistent settings store using shared preferences. Must be called before using `Settings`.
+Initialises the persistent settings store using shared preferences. Must be called before using `Settings`.
 
 .. code-block:: dart
 
@@ -56,23 +56,23 @@ Theme Integration
 
 The app uses the `getTheme()` function to generate a consistent `ThemeData` based on dark or light mode. Each widget (tiles, switches, dialogs) is passed the current theme explicitly to maintain styling consistency.
 
-Custom Widgets
---------------
+Custom Widgets (other)
+----------------------
 
-- **_PurpleRowItem**: A stylized row for list items with title, subtitle, and arrow.
-- **_PurpleSwitchRow**: A stylized row for switches with theme-aware background and primary color.
+- **_PurpleRowItem**: A stylised row for list items with title, subtitle, and arrow.
+- **_PurpleSwitchRow**: A stylised row for switches with theme-aware background and primary color.
 - **ChangeUsernameDialog**:
   - Validates username: length ≤ 15, alphanumeric, non-empty, and different from current.
 - **_ChangePasswordDialog**:
   - Validates password length (≥ 6 characters).
   - Simple password field, extensible for further logic.
 
-Dark Mode Synchronization
--------------------------
+Dark Mode Sync
+--------------
 
 Dark mode changes are propagated in two ways:
 
-1. **Local state sync**: `darkModeEnabled` is initialized and updated via `darkModeNotifier`.
+1. **Local state sync**: `darkModeEnabled` is initialised and updated via `darkModeNotifier`.
 2. **Global update**: Toggling `DarkModeTile` calls:
 
    .. code-block:: dart
