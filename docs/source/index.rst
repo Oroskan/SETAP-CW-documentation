@@ -1,7 +1,7 @@
-Welcome to Lumache's documentation!
+Setap Coursework documentation
 ===================================
 
-**This thing** is a flutter application for assisting in learning
+This is a flutter application for assisting in learning
 that stores notes, allows you to make quizzes and tracks your progress.
 The goal is to help you create learning resources and study them in a well designed app that can be used across desktop and mobile devices.
 
